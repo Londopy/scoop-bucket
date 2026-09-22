@@ -21,6 +21,7 @@ scoop update hidedesktopapps
 | App | Description |
 |---|---|
 | [hidedesktopapps](https://github.com/Londopy/HideDesktopApps) | System tray app to hide/show desktop icons, taskbar, and all windows via configurable hotkeys. Rust-native single binary. |
+| [nexium](https://github.com/Londopy/nexium) | The Nexium language: `nx`, a compiler that emits C and ships libraries, packages and tools. Needs a C compiler (`scoop install zig`); `nx doctor` says what it found. |
 
 ## Notes
 

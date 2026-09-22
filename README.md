@@ -15,6 +15,7 @@ Updating works the usual way:
 ```powershell
 scoop update
 scoop update hidedesktopapps
+scoop update nexium
 ```
 
 ## Apps

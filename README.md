@@ -7,6 +7,7 @@ A [Scoop](https://scoop.sh) bucket for my apps.
 ```powershell
 scoop bucket add londopy https://github.com/Londopy/scoop-bucket
 scoop install londopy/hidedesktopapps
+scoop install londopy/nexium
 ```
 
 Updating works the usual way:

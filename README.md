@@ -10,6 +10,7 @@ download is checked against the release's published SHA-256.
 [![Scoop](https://img.shields.io/badge/scoop-bucket-1f6feb?logo=windows&logoColor=white)](https://scoop.sh)
 [![nexium](https://img.shields.io/github/v/release/Londopy/nexium?label=nexium&logo=github&color=8b7cf6)](https://github.com/Londopy/nexium/releases/latest)
 [![hidedesktopapps](https://img.shields.io/github/v/release/Londopy/HideDesktopApps?label=hidedesktopapps&logo=github&color=8b7cf6)](https://github.com/Londopy/HideDesktopApps/releases/latest)
+[![eraswitch](https://img.shields.io/github/v/release/Londopy/EraSwitch?label=eraswitch&logo=github&color=8b7cf6)](https://github.com/Londopy/EraSwitch/releases/latest)
 
 ## Install
 
@@ -27,6 +28,7 @@ Then the bucket, and whichever apps you want:
 scoop bucket add londopy https://github.com/Londopy/scoop-bucket
 scoop install londopy/nexium
 scoop install londopy/hidedesktopapps
+scoop install londopy/eraswitch
 ```
 
 The `londopy/` prefix is only needed when another bucket has an app of the
@@ -38,6 +40,23 @@ same name; `scoop install nexium` works once the bucket is added.
 | --- | --- | --- | --- |
 | **nexium** | The Nexium language: `nx`, a compiler that emits C and ships libraries, packages and tools. Ownership without a borrow checker, a checked effect system, binary patterns, compile-time evaluation; one compiler that turns a source tree into a binary, a C library, a Python wheel, a Rust crate or an npm package. | x64, ARM64 | [site and docs](https://londopy.github.io/nexium/) · [the Topo tutorial](https://londopy.github.io/nexium/topo/01-base-camp.html) · [source](https://github.com/Londopy/nexium) · [releases](https://github.com/Londopy/nexium/releases) · [changelog](https://github.com/Londopy/nexium/blob/main/CHANGELOG.md) |
 | **hidedesktopapps** | A lightweight system-tray app that hides and shows desktop icons, the taskbar and every window with configurable hotkeys. For ricing, streaming, Wallpaper Engine and focus. One native Rust binary. | x64, x86, ARM64 | [source](https://github.com/Londopy/HideDesktopApps) · [releases](https://github.com/Londopy/HideDesktopApps/releases) |
+| **eraswitch** | A system-tray app that switches the Windows 11 desktop to a Windows XP look (taskbar, Start menu, wallpaper, sounds) and back with one click or Ctrl+Alt+E, restoring everything from a snapshot it takes first. Drives RetroBar and Open-Shell. One native Rust binary. | x64, x86, ARM64 | [source](https://github.com/Londopy/EraSwitch) · [releases](https://github.com/Londopy/EraSwitch/releases) · [changelog](https://github.com/Londopy/EraSwitch/blob/main/CHANGELOG.md) |
+
+### eraswitch, after installing
+
+EraSwitch drives two other programs rather than drawing anything itself:
+[RetroBar](https://github.com/dremin/RetroBar) for the taskbar and
+[Open-Shell](https://github.com/Open-Shell/Open-Shell-Menu) for the Start
+menu. Install them from EraSwitch's Settings (one click each, through
+winget), or yourself:
+
+```powershell
+winget install dremin.RetroBar
+winget install Open-Shell.Open-Shell-Menu
+```
+
+Then left-click the tray icon (or press Ctrl+Alt+E) to switch, and again to
+come back. Settings live next to the exe in Scoop's persisted folder.
 
 ### nexium, after installing
 
@@ -99,7 +118,8 @@ and refuses a file that does not match.
 
 Something about an app itself: its own repository's issues
 ([nexium](https://github.com/Londopy/nexium/issues),
-[hidedesktopapps](https://github.com/Londopy/HideDesktopApps/issues)).
+[hidedesktopapps](https://github.com/Londopy/HideDesktopApps/issues),
+[eraswitch](https://github.com/Londopy/EraSwitch/issues)).
 Something about installing or updating through Scoop, such as a hash
 mismatch or a stale version: [this repository's issues](https://github.com/Londopy/scoop-bucket/issues).
 `scoop checkup` and `scoop cache rm *` fix most local oddities.

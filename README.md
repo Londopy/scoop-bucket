@@ -11,6 +11,7 @@ download is checked against the release's published SHA-256.
 [![nexium](https://img.shields.io/github/v/release/Londopy/nexium?label=nexium&logo=github&color=8b7cf6)](https://github.com/Londopy/nexium/releases/latest)
 [![hidedesktopapps](https://img.shields.io/github/v/release/Londopy/HideDesktopApps?label=hidedesktopapps&logo=github&color=8b7cf6)](https://github.com/Londopy/HideDesktopApps/releases/latest)
 [![eraswitch](https://img.shields.io/github/v/release/Londopy/EraSwitch?label=eraswitch&logo=github&color=8b7cf6)](https://github.com/Londopy/EraSwitch/releases/latest)
+[![canopy](https://img.shields.io/github/v/release/Londopy/canopy?label=canopy&logo=github&color=8b7cf6)](https://github.com/Londopy/canopy/releases/latest)
 
 ## Install
 
@@ -29,6 +30,7 @@ scoop bucket add londopy https://github.com/Londopy/scoop-bucket
 scoop install londopy/nexium
 scoop install londopy/hidedesktopapps
 scoop install londopy/eraswitch
+scoop install londopy/canopy
 ```
 
 The `londopy/` prefix is only needed when another bucket has an app of the
@@ -41,6 +43,14 @@ same name; `scoop install nexium` works once the bucket is added.
 | **nexium** | The Nexium language: `nx`, a compiler that emits C and ships libraries, packages and tools. Ownership without a borrow checker, a checked effect system, binary patterns, compile-time evaluation; one compiler that turns a source tree into a binary, a C library, a Python wheel, a Rust crate or an npm package. | x64, ARM64 | [site and docs](https://londo.me/nexium/) · [the Topo tutorial](https://londo.me/nexium/topo/01-base-camp.html) · [source](https://github.com/Londopy/nexium) · [releases](https://github.com/Londopy/nexium/releases) · [changelog](https://github.com/Londopy/nexium/blob/main/CHANGELOG.md) |
 | **hidedesktopapps** | A lightweight system-tray app that hides and shows desktop icons, the taskbar and every window with configurable hotkeys. For ricing, streaming, Wallpaper Engine and focus. One native Rust binary. | x64, x86, ARM64 | [source](https://github.com/Londopy/HideDesktopApps) · [releases](https://github.com/Londopy/HideDesktopApps/releases) |
 | **eraswitch** | A system-tray app that switches the Windows 11 desktop to a Windows XP look (taskbar, Start menu, wallpaper, sounds) and back with one click or Ctrl+Alt+E, restoring everything from a snapshot it takes first. Drives RetroBar and Open-Shell. One native Rust binary. | x64, x86, ARM64 | [source](https://github.com/Londopy/EraSwitch) · [releases](https://github.com/Londopy/EraSwitch/releases) · [changelog](https://github.com/Londopy/EraSwitch/blob/main/CHANGELOG.md) |
+| **canopy** | A desktop harness for Overleaf: the real Overleaf editor for overleaf.com and self-hosted servers, plus two-way folder sync, snapshots, local compiles with a PDF preview and SyncTeX, offline editing with texlab, a terminal, a Zotero citation picker and a writing dashboard. | x64, x86, ARM64 | [source](https://github.com/Londopy/canopy) · [releases](https://github.com/Londopy/canopy/releases) · [changelog](https://github.com/Londopy/canopy/blob/main/CHANGELOG.md) |
+
+### canopy, after installing
+
+Local compiles need a TeX install: [MiKTeX](https://miktex.org),
+[TeX Live](https://tug.org/texlive/) or Tectonic (`scoop install tectonic`).
+Without one, Canopy still syncs and edits, and compiles stay on Overleaf.
+Settings, sign-ins and sync history live in Scoop's persisted folder.
 
 ### eraswitch, after installing
 
@@ -119,7 +129,8 @@ and refuses a file that does not match.
 Something about an app itself: its own repository's issues
 ([nexium](https://github.com/Londopy/nexium/issues),
 [hidedesktopapps](https://github.com/Londopy/HideDesktopApps/issues),
-[eraswitch](https://github.com/Londopy/EraSwitch/issues)).
+[eraswitch](https://github.com/Londopy/EraSwitch/issues),
+[canopy](https://github.com/Londopy/canopy/issues)).
 Something about installing or updating through Scoop, such as a hash
 mismatch or a stale version: [this repository's issues](https://github.com/Londopy/scoop-bucket/issues).
 `scoop checkup` and `scoop cache rm *` fix most local oddities.

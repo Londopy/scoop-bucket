@@ -13,6 +13,7 @@ download is checked against the release's published SHA-256.
 [![eraswitch](https://img.shields.io/github/v/release/Londopy/EraSwitch?label=eraswitch&logo=github&color=8b7cf6)](https://github.com/Londopy/EraSwitch/releases/latest)
 [![canopy](https://img.shields.io/github/v/release/Londopy/canopy?label=canopy&logo=github&color=8b7cf6)](https://github.com/Londopy/canopy/releases/latest)
 [![undervoice](https://img.shields.io/github/v/release/Londopy/undervoice?label=undervoice&logo=github&color=8b7cf6)](https://github.com/Londopy/undervoice/releases/latest)
+[![ofm](https://img.shields.io/github/v/release/Londopy/ofm?label=ofm&logo=github&color=8b7cf6)](https://github.com/Londopy/ofm/releases/latest)
 
 ## Install
 
@@ -33,6 +34,7 @@ scoop install londopy/hidedesktopapps
 scoop install londopy/eraswitch
 scoop install londopy/canopy
 scoop install londopy/undervoice
+scoop install londopy/ofm
 ```
 
 The `londopy/` prefix is only needed when another bucket has an app of the
@@ -46,7 +48,16 @@ same name; `scoop install nexium` works once the bucket is added.
 | **hidedesktopapps** | A lightweight system-tray app that hides and shows desktop icons, the taskbar and every window with configurable hotkeys. For ricing, streaming, Wallpaper Engine and focus. One native Rust binary. | x64, x86, ARM64 | [source](https://github.com/Londopy/HideDesktopApps) · [releases](https://github.com/Londopy/HideDesktopApps/releases) |
 | **eraswitch** | A system-tray app that switches the Windows 11 desktop to a Windows XP look (taskbar, Start menu, wallpaper, sounds) and back with one click or Ctrl+Alt+E, restoring everything from a snapshot it takes first. Drives RetroBar and Open-Shell. One native Rust binary. | x64, x86, ARM64 | [source](https://github.com/Londopy/EraSwitch) · [releases](https://github.com/Londopy/EraSwitch/releases) · [changelog](https://github.com/Londopy/EraSwitch/blob/main/CHANGELOG.md) |
 | **undervoice** | Sends your callsign, grid square and a short status hidden under ordinary FM voice, for amateur radio: a slow spread-spectrum data channel mixed in below the speech, through an unmodified radio and a USB sound card interface. A window for sound card and PTT setup (CM108 interfaces, serial RTS/DTR, Hamlib rigctld or VOX), transmitting and a log of what was heard. | x64 | [source](https://github.com/Londopy/undervoice) · [releases](https://github.com/Londopy/undervoice/releases) · [changelog](https://github.com/Londopy/undervoice/blob/main/CHANGELOG.md) |
+| **ofm** | An open sound card modem for VHF/UHF FM radios that Pat can use in place of VARA FM: the same TCP command and data ports, an open OFDM waveform with LDPC codes and adaptive speed levels, a KISS port for connectionless frames, and a simulated radio link for trying Pat without radios. Talks only to other ofm stations; not yet tested on the air. | x64, x86, ARM64 | [source](https://github.com/Londopy/ofm) · [releases](https://github.com/Londopy/ofm/releases) · [changelog](https://github.com/Londopy/ofm/blob/main/CHANGELOG.md) · [waveform](https://github.com/Londopy/ofm/blob/main/docs/waveform.md) |
 | **canopy** | A desktop harness for Overleaf: the real Overleaf editor for overleaf.com and self-hosted servers, plus two-way folder sync, snapshots, local compiles with a PDF preview and SyncTeX, offline editing with texlab, a terminal, a Zotero citation picker and a writing dashboard. | x64, x86, ARM64 | [source](https://github.com/Londopy/canopy) · [releases](https://github.com/Londopy/canopy/releases) · [changelog](https://github.com/Londopy/canopy/blob/main/CHANGELOG.md) |
+
+### ofm, after installing
+
+`ofm devices` lists the sound cards, `ofm calibrate` sets the deviation, and `ofm run` starts
+the modem on ports 8300 and 8301 for Pat's `varafm` transport. `ofm sim` runs two modems over a
+simulated radio link to try Pat with no radio. `ofm.exe` is on the PATH; settings live next to
+it in Scoop's persisted folder, and `scoop update ofm` takes care of new versions (the
+built-in `ofm update` works too, but Scoop then no longer knows the version).
 
 ### undervoice, after installing
 
@@ -141,7 +152,8 @@ Something about an app itself: its own repository's issues
 [hidedesktopapps](https://github.com/Londopy/HideDesktopApps/issues),
 [eraswitch](https://github.com/Londopy/EraSwitch/issues),
 [canopy](https://github.com/Londopy/canopy/issues),
-[undervoice](https://github.com/Londopy/undervoice/issues)).
+[undervoice](https://github.com/Londopy/undervoice/issues),
+[ofm](https://github.com/Londopy/ofm/issues)).
 Something about installing or updating through Scoop, such as a hash
 mismatch or a stale version: [this repository's issues](https://github.com/Londopy/scoop-bucket/issues).
 `scoop checkup` and `scoop cache rm *` fix most local oddities.

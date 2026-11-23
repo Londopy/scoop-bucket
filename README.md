@@ -53,7 +53,9 @@ same name; `scoop install nexium` works once the bucket is added.
 
 ### ofm, after installing
 
-`ofm devices` lists the sound cards, `ofm calibrate` sets the deviation, and `ofm run` starts
+The ofm Start menu shortcut opens its window: the link, speed and receive level, a Calibrate
+tab for setting deviation, and the settings. From a terminal, `ofm devices` lists the sound
+cards, `ofm calibrate` sets the deviation, and `ofm run` starts
 the modem on ports 8300 and 8301 for Pat's `varafm` transport. `ofm sim` runs two modems over a
 simulated radio link to try Pat with no radio. `ofm.exe` is on the PATH; settings live next to
 it in Scoop's persisted folder, and `scoop update ofm` takes care of new versions (the
